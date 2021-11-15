@@ -1,0 +1,21 @@
+site_name: EDI cluster
+site_author: Jan Ludwiczak
+repo_url: https://github.com/labstructbioinf/edi_documentation
+docs_dir: docs
+theme:
+  name: material
+  logo: "img/logo.svg"
+  favicon: "img/favicon.ico"
+markdown_extensions:
+  - admonition:
+  - pymdownx.inlinehilite:
+  - pymdownx.superfences:
+nav:
+    - Home: index.md
+    - Getting started: first_steps.md
+    - Running calculations: running_jobs.md
+    - FAQ: faq.md
+    - Available resources: resources.md
+    - Available software: software.md
+extra_css:
+  - stylesheets/extra.css
