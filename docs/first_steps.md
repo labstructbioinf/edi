@@ -1,23 +1,32 @@
 ### **Setting up an account**
-In order to create your an account on EDI cluster please send an e-mail to <code>placeholder@domain.com</code> with CC to 
-<code>placholder_staszek@domain.com</code>. 
+In order to create your an account on EDI cluster please reach out to Janek and / or Staszek via Slack.
 
-The credentials will be sent in a separate message through a private note.
+**You will get a set of two credentials in different e-mail messages.**
+
+- First password allows to login to the entry node (jumphost) at <code>lbs.cent.uw.edu.pl</code>. 
+This password needs to be changed after first login and subsequently in 90 days intervals.
+- Second password allows to login to the compute [nodes](resources.md) <code>edi0[0-8]</code>.
+
 !!! Information
-    **It is a good practice to change the initially obtained password!**
-
-    The credentials are managed through a central LDAP system which means that any password change done on
-    one of the cluster nodes is automatically propagated to other nodes.
+    **Please note that for now password changes on each of the compute nodes and the entry node are not
+    synced.**
+    
+    The centralized authentication system will be introduced in near future.
 
 ### **Connecting via SSH**
-Connections to the EDI cluster are handled via SSH protocol.
+Connections to the EDI cluster are handled via SSH protocol. See the figure below
+for a brief introduction of the network organization:
+![Screenshot](img/scheme1.png)
+
+In order to login to the entry node you can issue the following command:
+
 ```sh
-ssh your_username@XX.YYY.ZZZ.AA
+ssh your_username@lbs.cent.uw.edu.pl
 ```
-This will bring you to the **entry host**, afterwards you can connect to any of the **compute nodes** 
+This will bring you to the **entry node (jumphost)**, afterwards you can connect to any of the **compute nodes** 
 ([click here](resources.md) for a complete list of available resources), for example:
 ```sh
-ssh your_username@edi07
+ssh your_username@edi01
 ```
 To avoid putting password during each login you can set up authorization via a certificate - additional information
 is available [here](certificates.md)
@@ -35,15 +44,15 @@ Each user has access to two personal directories:
     (please follow the [guidelines](faq.md#what-are-the-guidelines-for-homenfs-distributed-filesystem-use)).
 
 ### **Transferring files**
-The recommended options to send or fetch files from EDI storage are either <code>scp</code> or <code>rsync</code>.
+The recommended options to send or fetch files from EDI cluster are either <code>scp</code> or <code>rsync</code>.
 
-The storage on the entry host <code>lbs.cent.uw.edu.pl</code> is limited therefore it could be more convenient to setup
+The storage on the entry host <code>lbs.cent.uw.edu.pl</code> is **very** limited therefore it is recommended to setup
 ssh tunnel to send / fetch files directly.
 
 !!! Information
     This example will forward a port **22** on the **edi00** node to local port **7777** :
     ```sh
-    ssh -NL 7777:edi00:22 your_username@XX.YYY.ZZZ.AA
+    ssh -NL 7777:edi00:22 your_username@lbs.cent.uw.edu.pl
     ```
     After setting up a tunnel you can directly fetch or send files:
 

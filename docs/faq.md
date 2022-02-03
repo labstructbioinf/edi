@@ -3,8 +3,11 @@
 Assuming <code>jupyter</code> is running on <code>edi07</code> (port <code>8889</code>) it is possible
 to tunnel the ssh conection as follows:
 ```sh
-ssh -L 8889:localhost:8889 XX.YYY.ZZZ.AA -t ssh -NL 8889:localhost:8889 edi07
+ssh -L 8889:localhost:8889 your_username@lbs.cent.uw.edu.pl -t ssh -NL 8889:localhost:8889 your_username@edi07
 ```
+
+Afterwards you should be able to see the running Jupyter instance via browser at the URL:
+<code>http://localhost:8889</code>
 
 ### **How to install python packages on EDI?**
 <code>python3</code> (3.6.9) and <code>python2</code> (2.7.17) along with the recent <code>pip</code> 
