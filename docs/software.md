@@ -9,7 +9,8 @@
 | **dssp** | 3.1.4  | all  | <code>/opt/apps/dssp-3.1.4/mkdssp</code> <br /> Binary erroneously shows version 3.1.2   | JL  |
 | **dssp** | 2.3.0 | all  | <code>/opt/apps/dssp-2.3.0/mkdssp</code> <br /> This version works with Socket  | JL  |
 | **hh-suite**  | 3.3.0  | all | <code>/opt/apps/hh-suite/bin/*</code> | JL |
-| **hmmer** | 3.3.2 | all | <code>/opt/apps/hmmer-3.3.2</* </code> | JL |
+| **hmmer** | 3.3.2 | all | <code>/opt/apps/hmmer-3.3.2/*</code> | JL |
+| **mafft** | 7.490 | all | <code>/opt/apps/mafft/bin/* </code> | JL |
 | **master** | 1.5.1 | all | <code>/opt/apps/master/bin/*</code>  | JL |
 | **maxcluster** | 0.6.6 | all | <code>/opt/apps//maxcluster/maxcluster64bit</code> | JL
 | **mmseqs2** | 9-d36de | all  | <code>/opt/apps/MMseqs2/bin/* </code>  | JL |
