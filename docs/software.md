@@ -17,6 +17,7 @@
 | **modeller** | 9.2.5 | all | <code>mod9.25</code> (in <code>$PATH</code>) | SDH |
 | **muscle** | 3.8.31 | all | <code>/opt/apps/muscle/muscle3.8.31 </code> | JL |
 | **ncbi-blast** | 2.9.0 | all | <code>/opt/apps/ncbi-blast+/bin/* </code> | JL |
+| **ont-guppy** | 6.0.1+652ffd1 | <code>edi0[1-8]</code> | <code>/opt/apps/ont-guppy/bin/* </code> | JL |
 | **pd2_public** | 5b84579 | all | <code>/opt/apps/pd2_public </code> | JL |
 | **pymol** | 2.3.0 | all | <code>/opt/apps/pymol/bin/pymol </code> | JL |
 | **rosetta** | 3.10 | all | <code>/opt/apps/rosetta-3.10/main/source/bin/* </code> | JL |
