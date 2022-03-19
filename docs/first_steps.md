@@ -28,6 +28,29 @@ This will bring you to the **entry node (jumphost)**, afterwards you can connect
 ```sh
 ssh your_username@edi01
 ```
+
+**In order to simplify file copying, every day work with e.g. Jupyter notebooks the suggested way of connecting
+to individual <code>edi</code> nodes is to use [sshuttle](https://github.com/sshuttle/sshuttle). This allows to
+bypass the login node and work almost the same way as being connected via VPN to the local network.**
+
+!!! Example
+    Assuming <code>sshuttle</code> was installed according to the [guide](https://sshuttle.readthedocs.io/en/stable/installation.html)
+    you can connect as follows:
+    ```sh
+    sshuttle --dns -NHr your_username@lbs.cent.uw.edu.pl 10.10.61.1/24
+    ```
+    Once connection is established you can directly login to any <code>edi</code> node:
+    ```sh
+    ssh edi05
+    ```
+
+!!! Information
+    During the first connection to the entry node you will be required to change the initially obtained password.
+    
+!!! Information
+    Additionally, depending on your computer and network settings, you may have to connect to <code>edi</code> nodes 
+    once without <code>sshuttle</code> so that SSH connections are properly configured.
+
 To avoid putting password during each login you can set up authorization via a certificate - additional information
 is available [here](certificates.md)
 
@@ -47,22 +70,13 @@ Each user has access to two personal directories:
 The recommended options to send or fetch files from EDI cluster are either <code>scp</code> or <code>rsync</code>.
 
 The storage on the entry host <code>lbs.cent.uw.edu.pl</code> is **very** limited therefore it is recommended to setup
-ssh tunnel to send / fetch files directly.
+**sshuttle** to send / fetch files directly.
 
 !!! Information
-    This example will forward a port **22** on the **edi00** node to local port **7777** :
+    Assuming you established a connection with <code>sshuttle</code> you can directly send files or
+    directories to any <code>edi</code> node:
     ```sh
-    ssh -NL 7777:edi00:22 your_username@lbs.cent.uw.edu.pl
-    ```
-    After setting up a tunnel you can directly fetch or send files:
-
-    - Download "file.txt" from edi00
-    ```sh
-    scp -P 7777 your_username@localhost:file.txt .
-    ```
-    - Send "file2" txt to edi00
-    ```sh
-    scp -P 22 file2.txt your_username@localhost:
+    scp file.txt your_username@edi05:
     ```
 
 ### **Next steps**
