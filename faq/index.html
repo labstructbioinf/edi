@@ -422,12 +422,13 @@
                   <h1>FAQ</h1>
                 
                 <h3 id="how-to-run-jupyter-notebooks-remotely-on-edi"><strong>How to run Jupyter notebooks remotely on EDI?</strong></h3>
-<p>Assuming <code>jupyter</code> is running on <code>edi07</code> (port <code>8889</code>) it is possible
-to tunnel the ssh conection as follows:
-<div class="highlight"><pre><span></span><code>ssh -L <span class="m">8889</span>:localhost:8889 your_username@lbs.cent.uw.edu.pl -t ssh -NL <span class="m">8889</span>:localhost:8889 your_username@edi07
+<p>Assuming <code>jupyter</code> is running on <code>edi07</code> (port <code>8888</code>) 
+and that the connection is established with <code>sshuttle</code> (see <a href="../first_steps/#connecting-via-ssh"><strong>Getting started</strong></a>
+section for more details) it is possible setup the tunnel as follows:
+<div class="highlight"><pre><span></span><code>ssh -NL <span class="m">8888</span>:localhost:8888 your_username@edi07
 </code></pre></div></p>
 <p>Afterwards you should be able to see the running Jupyter instance via browser at the URL:
-<code>http://localhost:8889</code></p>
+<code>http://localhost:8888</code></p>
 <h3 id="how-to-install-python-packages-on-edi"><strong>How to install python packages on EDI?</strong></h3>
 <p><code>python3</code> (3.6.9) and <code>python2</code> (2.7.17) along with the recent <code>pip</code> 
 and <code>virtualenv</code> are installed system-wide on each EDI.</p>

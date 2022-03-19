@@ -459,8 +459,30 @@ for a brief introduction of the network organization:
 This will bring you to the <strong>entry node (jumphost)</strong>, afterwards you can connect to any of the <strong>compute nodes</strong> 
 (<a href="../resources/">click here</a> for a complete list of available resources), for example:
 <div class="highlight"><pre><span></span><code>ssh your_username@edi01
+</code></pre></div></p>
+<p><strong>In order to simplify file copying, every day work with e.g. Jupyter notebooks the suggested way of connecting
+to individual <code>edi</code> nodes is to use <a href="https://github.com/sshuttle/sshuttle">sshuttle</a>. This allows to
+bypass the login node and work almost the same way as being connected via VPN to the local network.</strong></p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Assuming <code>sshuttle</code> was installed according to the <a href="https://sshuttle.readthedocs.io/en/stable/installation.html">guide</a>
+you can connect as follows:
+<div class="highlight"><pre><span></span><code>sshuttle --dns -NHr your_username@lbs.cent.uw.edu.pl <span class="m">10</span>.10.61.1/24
 </code></pre></div>
-To avoid putting password during each login you can set up authorization via a certificate - additional information
+Once connection is established you can directly login to any <code>edi</code> node:
+<div class="highlight"><pre><span></span><code>ssh edi05
+</code></pre></div></p>
+</div>
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>During the first connection to the entry node you will be required to change the initially obtained password.</p>
+</div>
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>Additionally, depending on your computer and network settings, you may have to connect to <code>edi</code> nodes 
+once without <code>sshuttle</code> so that SSH connections are properly configured.</p>
+</div>
+<p>To avoid putting password during each login you can set up authorization via a certificate - additional information
 is available <a href="certificates.md">here</a></p>
 <h3 id="work-environment"><strong>Work environment</strong></h3>
 <p>Each user has access to two personal directories:</p>
@@ -478,21 +500,13 @@ they are not available on other nodes.</strong> </p>
 <h3 id="transferring-files"><strong>Transferring files</strong></h3>
 <p>The recommended options to send or fetch files from EDI cluster are either <code>scp</code> or <code>rsync</code>.</p>
 <p>The storage on the entry host <code>lbs.cent.uw.edu.pl</code> is <strong>very</strong> limited therefore it is recommended to setup
-ssh tunnel to send / fetch files directly.</p>
+<strong>sshuttle</strong> to send / fetch files directly.</p>
 <div class="admonition information">
 <p class="admonition-title">Information</p>
-<p>This example will forward a port <strong>22</strong> on the <strong>edi00</strong> node to local port <strong>7777</strong> :
-<div class="highlight"><pre><span></span><code>ssh -NL <span class="m">7777</span>:edi00:22 your_username@lbs.cent.uw.edu.pl
-</code></pre></div>
-After setting up a tunnel you can directly fetch or send files:</p>
-<ul>
-<li>Download "file.txt" from edi00
-<div class="highlight"><pre><span></span><code>scp -P <span class="m">7777</span> your_username@localhost:file.txt .
-</code></pre></div></li>
-<li>Send "file2" txt to edi00
-<div class="highlight"><pre><span></span><code>scp -P <span class="m">22</span> file2.txt your_username@localhost:
-</code></pre></div></li>
-</ul>
+<p>Assuming you established a connection with <code>sshuttle</code> you can directly send files or
+directories to any <code>edi</code> node:
+<div class="highlight"><pre><span></span><code>scp file.txt your_username@edi05:
+</code></pre></div></p>
 </div>
 <h3 id="next-steps"><strong>Next steps</strong></h3>
 <p>Once the basics are set up you should be able to start running calculations. Follow the next chapter for more details.</p>
