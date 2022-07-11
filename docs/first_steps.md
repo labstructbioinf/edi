@@ -1,11 +1,20 @@
 ### **Setting up an account**
-In order to create your an account on EDI cluster please reach out to Janek and / or Staszek via Slack.
+In order to create your an account on EDI cluster please reach out to Janek and / or Staszek via Slack or e-mail.
 
 **You will get a set of two credentials in different e-mail messages.**
 
 - First password allows to login to the entry node (jumphost) at <code>lbs.cent.uw.edu.pl</code>. 
 This password needs to be changed after first login and subsequently in 90 days intervals.
 - Second password allows to login to the compute [nodes](resources.md) <code>edi0[0-8]</code>.
+
+** Please familiarize yourself with the general rules of cluster usage before proceeding
+further - [LINK](rules.md) **
+
+!!! Warning
+    **Important:** in case of lost password or other technical difficulties related to the **entry node** 
+    (not compute nodes) please reach out to the IT department at CeNT UW - address: <code>it @ cent.uw.edu.pl</code>.
+    
+    Include the <code>[sih-61]</code> prefix in the message title and add Janek and Staszek to CC.
 
 !!! Information
     **Please note that for now password changes on each of the compute nodes and the entry node are not
