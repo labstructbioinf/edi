@@ -1,11 +1,10 @@
 ### **Setting up an account**
-In order to create your an account on EDI cluster please reach out to Janek and / or Staszek via Slack or e-mail.
+In order to create your an account on EDI cluster please reach out to Kamil and / or Staszek via Slack or e-mail.
 
-**You will get a set of two credentials in different e-mail messages.**
+** After the account is approved you will receive credentials via e-mail from the <code> it @ cent.uw.edu.pl </code> address.**
 
-- First password allows to login to the entry node (jumphost) at <code>lbs.cent.uw.edu.pl</code>. 
-This password needs to be changed after first login and subsequently in 90 days intervals.
-- Second password allows to login to the compute [nodes](resources.md) <code>edi0[0-8]</code>.
+
+The obtained password will allow to login to the entry node (jumphost) at <code>lbs.cent.uw.edu.pl</code> and compute [nodes](resources.md) <code>edi0[0-8]</code>.
 
 ** Please familiarize yourself with the general rules of cluster usage before proceeding
 further - [LINK](rules.md) **
@@ -14,13 +13,10 @@ further - [LINK](rules.md) **
     **Important:** in case of lost password or other technical difficulties related to the **entry node** 
     (not compute nodes) please reach out to the IT department at CeNT UW - address: <code>it @ cent.uw.edu.pl</code>.
     
-    Include the <code>[sih-61]</code> prefix in the message title and add Janek and Staszek to CC.
+    Include the <code>[sih-61]</code> prefix in the message title and add cluster administrators @Kamil and @Staszek in CC.
 
 !!! Information
-    **Please note that for now password changes on each of the compute nodes and the entry node are not
-    synced.**
-    
-    The centralized authentication system will be introduced in near future.
+    **Please note that password changes on each of the compute nodes and the entry node are synced. It is advised to change your initially obtained password after first login.**
 
 ### **Connecting via SSH**
 Connections to the EDI cluster are handled via SSH protocol. See the figure below
@@ -52,9 +48,6 @@ bypass the login node and work almost the same way as being connected via VPN to
     ```sh
     ssh edi05
     ```
-
-!!! Information
-    During the first connection to the entry node you will be required to change the initially obtained password.
     
 !!! Information
     Additionally, depending on your computer and network settings, you may have to connect to <code>edi</code> nodes 
