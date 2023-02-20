@@ -451,26 +451,20 @@
                   <h1>Getting started</h1>
                 
                 <h3 id="setting-up-an-account"><strong>Setting up an account</strong></h3>
-<p>In order to create your an account on EDI cluster please reach out to Janek and / or Staszek via Slack or e-mail.</p>
-<p><strong>You will get a set of two credentials in different e-mail messages.</strong></p>
-<ul>
-<li>First password allows to login to the entry node (jumphost) at <code>lbs.cent.uw.edu.pl</code>. 
-This password needs to be changed after first login and subsequently in 90 days intervals.</li>
-<li>Second password allows to login to the compute <a href="../resources/">nodes</a> <code>edi0[0-8]</code>.</li>
-</ul>
+<p>In order to create your an account on EDI cluster please reach out to Kamil and / or Staszek via Slack or e-mail.</p>
+<p><strong> After the account is approved you will receive credentials via e-mail from the <code> it @ cent.uw.edu.pl </code> address.</strong></p>
+<p>The obtained password will allow to login to the entry node (jumphost) at <code>lbs.cent.uw.edu.pl</code> and compute <a href="../resources/">nodes</a> <code>edi0[0-8]</code>.</p>
 <p><strong> Please familiarize yourself with the general rules of cluster usage before proceeding
 further - <a href="../rules/">LINK</a> </strong></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p><strong>Important:</strong> in case of lost password or other technical difficulties related to the <strong>entry node</strong> 
 (not compute nodes) please reach out to the IT department at CeNT UW - address: <code>it @ cent.uw.edu.pl</code>.</p>
-<p>Include the <code>[sih-61]</code> prefix in the message title and add Janek and Staszek to CC.</p>
+<p>Include the <code>[sih-61]</code> prefix in the message title and add cluster administrators @Kamil and @Staszek in CC.</p>
 </div>
 <div class="admonition information">
 <p class="admonition-title">Information</p>
-<p><strong>Please note that for now password changes on each of the compute nodes and the entry node are not
-synced.</strong></p>
-<p>The centralized authentication system will be introduced in near future.</p>
+<p><strong>Please note that password changes on each of the compute nodes and the entry node are synced. It is advised to change your initially obtained password after first login.</strong></p>
 </div>
 <h3 id="connecting-via-ssh"><strong>Connecting via SSH</strong></h3>
 <p>Connections to the EDI cluster are handled via SSH protocol. See the figure below
@@ -495,10 +489,6 @@ you can connect as follows:
 Once connection is established you can directly login to any <code>edi</code> node:
 <div class="highlight"><pre><span></span><code>ssh edi05
 </code></pre></div></p>
-</div>
-<div class="admonition information">
-<p class="admonition-title">Information</p>
-<p>During the first connection to the entry node you will be required to change the initially obtained password.</p>
 </div>
 <div class="admonition information">
 <p class="admonition-title">Information</p>
