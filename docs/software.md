@@ -6,6 +6,7 @@
 | **cd-hit**  | 4.8.1 | all | <code>/opt/apps/cd-hit </code> | KK-SDH  |
 | **ccmpred** | 688e4ba  | all | <code>/opt/apps/CCMpred/bin/ccmpred </code> | KK-SDH |
 | **clustalomega** | 1.2.4 | all | <code>/opt/apps/clustalo/clustalo-1.2.4 </code> | KK-SDH  |
+| **dorado** | 0.3.3 | all | <code>/opt/apps/dorado-0.3.3-linux-x64/bin/</code> | KK-SDH |
 | **dssp** | 3.1.4  | all  | <code>/opt/apps/dssp-3.1.4/mkdssp</code> <br /> Binary erroneously shows version 3.1.2   | KK-SDH  |
 | **dssp** | 2.3.0 | all  | <code>/opt/apps/dssp-2.3.0/mkdssp</code> <br /> This version works with Socket  | KK-SDH  |
 | **hh-suite**  | 3.3.0  | all | <code>/opt/apps/hh-suite/bin/*</code> | KK-SDH |
@@ -20,6 +21,7 @@
 | **ont-guppy** | 6.0.1+652ffd1 | <code>edi0[1-8]</code> | <code>/opt/apps/ont-guppy/bin/* </code> | KK-SDH |
 | **pd2_public** | 5b84579 | all | <code>/opt/apps/pd2_public </code> | KK-SDH |
 | **pymol** | 2.3.0 | all | <code>/opt/apps/pymol/bin/pymol </code> | KK-SDH |
+| **raxml** | 1.2.0 | all | <code>/opt/apps/raxmlng-1.2.0/bin/</code> | KK-SDH |
 | **rosetta** | 3.10 | all | <code>/opt/apps/rosetta-3.10/main/source/bin/* </code> | KK-SDH |
 | **rosetta** | 3.12 | all | <code>/opt/apps/rosetta-3.12/main/source/bin/* </code> | KK-SDH |
 | **socket** | 3.03  | all | <code>/opt/apps/socket/socket</code> | KK-SDH |
