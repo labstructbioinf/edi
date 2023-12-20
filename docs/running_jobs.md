@@ -74,3 +74,34 @@ SLURM batch script that you can use to schedule a job:
     ~$ sbatch job.sh
     Submitted batch job 1234
     ```
+### **Array jobs**
+
+This mechamism allows to run multiple similar jobs in batch-like fashion. 
+
+!!! Example
+    Suppose the following <code>job.slurm</code> file:
+    ```sh
+    #!/bin/bash
+    
+    #SBATCH -p cpu # cpu partition
+    #SBATCH -J name of the array jon
+    # exclude nodes without gpu
+    #SBATCH --exclude=edi[00,01,07,08] # nodes exluded from calculations
+    
+    #SBATCH --array=1-20%4 # declare a set of 20 jobs, where each 4 jobs running concurently
+    #SBATCH --cpus-per-task=4 # number of cores per each task
+    #SBATCH --mem=8GB # memory per each task
+    #SBATCH --output=%A_%a.out # output of each single job in form of JOBID_TASKID
+    #SBATCH --error=%A_%a.err # similar as above
+    
+    #SBATCH --chdir=... directory where your job will be submit which is optional
+    ```
+    
+    slurm provide useful enviroment variables to manage each task parametrization
+    
+    `SLURM_ARRAY_TASK_ID` - number of current task in our example varing from 1 to 20
+    `SLURM_ARRAY_JOB_ID` - id of the array job
+    
+    Array job can be submit in the same way as batch jobs.
+    
+    More informations: https://slurm.schedmd.com/job_array.html
