@@ -289,6 +289,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#array-jobs" class="md-nav__link">
+    Array jobs
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -403,6 +410,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#array-jobs" class="md-nav__link">
+    Array jobs
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -483,6 +497,10 @@ You can tweak your allocation depending on work needs, see the following table f
 <td><strong>-w</strong></td>
 <td>Host to start your session (<em>default = host you are running alloc on</em>)</td>
 </tr>
+<tr>
+<td><strong>-J</strong></td>
+<td>Job name</td>
+</tr>
 </tbody>
 </table>
 <div class="admonition example">
@@ -511,6 +529,33 @@ You can submit the specified job via <code>sbatch</code> command:
 <div class="highlight"><pre><span></span><code>~$ sbatch job.sh
 Submitted batch job <span class="m">1234</span>
 </code></pre></div></p>
+</div>
+<h3 id="array-jobs"><strong>Array jobs</strong></h3>
+<p>This mechamism allows to run multiple similar jobs in batch-like fashion. </p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Suppose the following <code>job.slurm</code> file:
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH -p cpu # CPU partition</span>
+<span class="c1">#SBATCH -J name of the array job</span>
+<span class="c1"># exclude nodes without gpu</span>
+<span class="c1">#SBATCH --exclude=edi[00,01,07,08] # nodes exluded from calculations</span>
+
+<span class="c1">#SBATCH --array=1-20%4 # declare a set of 20 jobs, where each 4 jobs running concurently</span>
+<span class="c1">#SBATCH --cpus-per-task=4 # number of cores per each task</span>
+<span class="c1">#SBATCH --mem=8GB # memory per each task</span>
+<span class="c1">#SBATCH --output=%A_%a.out # output of each single job in form of JOBID_TASKID</span>
+<span class="c1">#SBATCH --error=%A_%a.err # similar as above</span>
+
+<span class="c1">#SBATCH --chdir=... directory where your job will be submit which is optional</span>
+</code></pre></div></p>
+<p><strong>attention</strong> providing non existing path to <code>--output</code> or <code>--error</code> will crashes your job without any message
+slurm provide useful enviroment variables to manage each task parametrization</p>
+<p><code>SLURM_ARRAY_TASK_ID</code> - number of current task in our example varing from 1 to 20</p>
+<p><code>SLURM_ARRAY_JOB_ID</code> - id of the array job</p>
+<p>Array job can be submit in the same way as batch jobs.</p>
+<p>More informations: https://slurm.schedmd.com/job_array.html</p>
 </div>
                 
               
