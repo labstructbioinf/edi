@@ -17,6 +17,7 @@ nav:
     - FAQ: faq.md
     - Available resources: resources.md
     - Available software: software.md
+    - Available databases: databases.md
     - General rules: rules.md
 extra_css:
   - stylesheets/extra.css
