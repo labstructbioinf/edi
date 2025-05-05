@@ -1,5 +1,5 @@
 site_name: EDI cluster
-site_author: Jan Ludwiczak
+site_author: Jan Ludwiczak, Kamil Kamiński
 repo_url: https://github.com/labstructbioinf/edi_documentation
 docs_dir: docs
 theme:
@@ -19,5 +19,6 @@ nav:
     - Available software: software.md
     - Available databases: databases.md
     - General rules: rules.md
+    - Docker: docker.md
 extra_css:
   - stylesheets/extra.css

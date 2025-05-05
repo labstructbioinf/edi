@@ -81,5 +81,38 @@ The storage on the entry host <code>lbs.cent.uw.edu.pl</code> is **very** limite
     scp file.txt your_username@edi05:
     ```
 
+
+### Jupyter setup
+#### add entry to ssh config file
+With below entry you can login directly into edi cluster eg. `ssh user@ediXX` without specification of the jumphost.
+add the following entry to your `~/.ssh/config` if the file does not exsits create it.
+REPLACE `USER` with your user name and `ediXX` with appropraite node in below command.
+```bash
+Host jumphost
+User USER
+Hostname lbs.cent.uw.edu.pl
+Host ediXX
+User USER
+ProxyJump jumphost
+```
+
+#### start jupyter instance
+now login into desired node activate appropriate python environemnt.
+REPLACE `port` with you port typically in the range of 8000.
+```bash
+jupyter-lab --no-browser --port [port]
+```
+
+#### forward port
+
+REPLACE `[port]` with the port value from above command and `ediXX` with destination node.
+```bash
+ssh -NL [port]:localhost:[port] ediXX
+```
+
+
+
+
+
 ### **Next steps**
 Once the basics are set up you should be able to start running calculations. Follow the next chapter for more details.

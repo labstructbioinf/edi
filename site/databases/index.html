@@ -11,10 +11,10 @@
       
       
       
-        <link rel="prev" href="../faq/">
+        <link rel="prev" href="../software/">
       
       
-        <link rel="next" href="../software/">
+        <link rel="next" href="../rules/">
       
       
       <link rel="icon" href="../img/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Available resources - EDI cluster</title>
+        <title>Available databases - EDI cluster</title>
       
     
     
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Available resources
+              Available databases
             
           </span>
         </div>
@@ -300,17 +300,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
         
   
   
@@ -321,7 +314,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -352,10 +344,17 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../databases/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -366,6 +365,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -449,48 +449,32 @@
   
 
 
-  <h1>Available resources</h1>
+  <h1>Available databases</h1>
 
-<p>EDI cluster has in total 92 physical CPUs (184 virtual), 16 GPUs, 576 GB of RAM and around 140 TB of storage.</p>
-<p>Characteristcs of available compute nodes are summarized below:</p>
 <table>
 <thead>
 <tr>
 <th>Name</th>
-<th>CPU</th>
-<th>GPU</th>
-<th>RAM</th>
-<th>Storage</th>
+<th>Version</th>
+<th>Hosts</th>
+<th>Location</th>
+<th>Maintainer</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>edi00</strong></td>
-<td>Xeon Gold 6230 <br />(20 cores)</td>
-<td>None</td>
-<td>128 GB</td>
-<td>8 x 6TB (RAID5) HDD<br /> 1 TB SSD</td>
+<td><strong>NCBI NT</strong> <br /></td>
+<td>2024-02-08</td>
+<td>all</td>
+<td><code>/home/db/NCBI_NT/*</code></td>
+<td>MO</td>
 </tr>
 <tr>
-<td><strong>edi0[1-3]</strong></td>
-<td>i7-6950X<br />  (10 cores)</td>
-<td>2x GeForce 1080<br />  (8 GB VRAM)</td>
-<td>64 GB</td>
-<td>4 x 6TB HDD (RAID5)</td>
-</tr>
-<tr>
-<td><strong>edi0[4-7]</strong></td>
-<td>i9-9900K<br />  (8 cores)</td>
-<td>2x NVIDIA RTX 2080Ti<br />  (11 GB VRAM)</td>
-<td>64 GB</td>
-<td>4 x 6TB HDD (RAID5)</td>
-</tr>
-<tr>
-<td><strong>edi08</strong></td>
-<td>i9-9900K<br />  (8 cores)</td>
-<td>2x NVIDIA RTX A4500 <br />  (20 GB VRAM)</td>
-<td>64 GB</td>
-<td>4 x 6TB HDD (RAID5)</td>
+<td><strong>NCBI NR90</strong> <br /></td>
+<td>2023-05-03</td>
+<td>all</td>
+<td><code>/home/db/NR90/nr90</code></td>
+<td>MO</td>
 </tr>
 </tbody>
 </table>
