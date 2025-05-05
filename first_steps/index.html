@@ -324,6 +324,48 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#jupyter-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      **Jupyter setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="**Jupyter setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-entry-to-ssh-config-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      add entry to ssh config file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-jupyter-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      start jupyter instance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forward-port" class="md-nav__link">
+    <span class="md-ellipsis">
+      forward port
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       Next steps
@@ -555,6 +597,48 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#jupyter-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      **Jupyter setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="**Jupyter setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-entry-to-ssh-config-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      add entry to ssh config file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-jupyter-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      start jupyter instance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forward-port" class="md-nav__link">
+    <span class="md-ellipsis">
+      forward port
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       Next steps
@@ -655,6 +739,27 @@ directories to any <code>edi</code> node:
 <div class="highlight"><pre><span></span><code>scp<span class="w"> </span>file.txt<span class="w"> </span>your_username@edi05:
 </code></pre></div></p>
 </div>
+<h3 id="jupyter-setup">**Jupyter setup</h3>
+<h4 id="add-entry-to-ssh-config-file">add entry to ssh config file</h4>
+<p>With below entry you can login directly into edi cluster eg. <code>ssh user@ediXX</code> without specification of the jumphost.
+add the following entry to your <code>~/.ssh/config</code> if the file does not exsits create it.
+REPLACE <code>USER</code> with your user name and <code>ediXX</code> with appropraite node in below command.
+<div class="highlight"><pre><span></span><code>Host<span class="w"> </span>jumphost
+User<span class="w"> </span>USER
+Hostname<span class="w"> </span>lbs.cent.uw.edu.pl
+Host<span class="w"> </span>ediXX
+User<span class="w"> </span>USER
+ProxyJump<span class="w"> </span>jumphost
+</code></pre></div></p>
+<h4 id="start-jupyter-instance">start jupyter instance</h4>
+<p>now login into desired node activate appropriate python environemnt.
+REPLACE <code>port</code> with you port typically in the range of 8000.
+<div class="highlight"><pre><span></span><code>jupyter-lab<span class="w"> </span>--no-browser<span class="w"> </span>--port<span class="w"> </span><span class="o">[</span>port<span class="o">]</span>
+</code></pre></div></p>
+<h4 id="forward-port">forward port</h4>
+<p>REPLACE <code>[port]</code> with the port value from above command and <code>ediXX</code> with destination node.
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-NL<span class="w"> </span><span class="o">[</span>port<span class="o">]</span>:localhost:<span class="o">[</span>port<span class="o">]</span><span class="w"> </span>ediXX
+</code></pre></div></p>
 <h3 id="next-steps"><strong>Next steps</strong></h3>
 <p>Once the basics are set up you should be able to start running calculations. Follow the next chapter for more details.</p>
 
